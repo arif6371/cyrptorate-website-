@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Analysis - Cryptocurrency Website Design</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="Market_Analysis.js"></script> -->
+  <style>
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <img src="logo.png" alt="logo" class="logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="market.html">market</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+      </ul>
+      <a href="#" class="btn">EN</a>
+    </nav>
+
+    <div class="content">
+      <h1>Market Analysis</h1>
+      <p>Welcome to the market analysis section of our Cryptocurrency Website. Here, you can find detailed analysis <br>
+        information about the cryptocurrency market, Bitcoin, Ethereum, Dogecoin, and more.</p>
+      <h2>Cryptocurrency Market Analysis:</h2>
+      <p>The "Cryptocurrency Market Analysis" section on a website can offer a comprehensive view of the market. It may
+        include daily or weekly recaps of major cryptocurrency performances, technical and fundamental analyses, trends,
+        price predictions, market sentiment, comparative analyses, investment strategies, regulatory updates, and expert
+        opinions. By covering these aspects, users can gain valuable insights for navigating and understanding the
+        cryptocurrency market efficiently.</p>
+      <h2>Bitcoin Analysis:</h2>
+      <p>Bitcoin analysis provides a detailed examination of various aspects of Bitcoin, including its price movements,
+        market trends, technical indicators, <br> and fundamental factors influencing its value. This analysis helps
+        investors and enthusiasts understand the current state of Bitcoin and make informed decisions regarding buying,
+        selling, or holding the cryptocurrency.</p>
+      <h2>Ethereum Analysis:</h2>
+      <p>Ethereum analysis involves assessing key aspects of Ethereum, such as price fluctuations, market trends,
+        technical analysis, and fundamental factors impacting its value. This analysis aids investors and followers in
+        comprehending Ethereum's current status and making informed choices regarding trading, investment, or engagement
+        with the platform.</p>
+      <h2>Dogecoin Analysis:</h2>
+      <p>Dogecoin analysis entails evaluating critical aspects of Dogecoin, including price movements, market trends,
+        technical indicators, and fundamental factors influencing its value. This analysis assists traders and
+        enthusiasts in understanding Dogecoin's current position and making well-informed decisions regarding trading,
+        investment, or involvement with the cryptocurrency.</p>
+    </div>
+    <div class="content">
+      <canvas id="cryptoChart" width="800" height="400"></canvas>
+      <!-- Your existing content -->
+    </div>
+  </div>
+<script>
+    // Fetch cryptocurrency price data from an API (replace 'YOUR_API_URL' with the actual API URL)
+    fetch('https://api.coingecko.com/api/v3/coins/bitcoin')
+      .then(response => response.json())
+      .then(data => {
+        const labels = data.map(item => item.date); // Assuming the API response includes dates
+        const prices = data.map(item => item.price); // Assuming the API response includes prices
+
+        // Create a line chart
+        const ctx = document.getElementById('cryptoChart').getContext('2d');
+        const cryptoChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Cryptocurrency Price',
+              data: prices,
+              borderColor: 'blue',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: false
+                }
+              }]
+            }
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  </script>
+
+</body>
+
+</html>

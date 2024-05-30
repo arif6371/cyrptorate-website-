@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market - Cryptocurrency Website Design</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <script src="market.js"></script>
+  <style>
+    .container {
+      padding: 0;
+      margin: 0;
+    }
+
+    .content {
+      margin-bottom: 45px;
+    }
+
+    .content a {
+      margin-left: 65px;
+      display: inline-block;
+      margin-top: 30px;
+      margin-top: 30px;
+      background: #ff960b;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+    }
+
+    .content h1 {
+      padding-left: 65px;
+    }
+
+    .content p {
+      padding-left: 65px;
+    }
+
+
+    /* Add this style to your existing <style> tag or CSS file */
+    #crypto-ticker {
+      background: #16052d;
+      /* Soft orange background for contrast */
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      /* Evenly space out the ticker items */
+      align-items: center;
+      margin-top: 20px;
+      /* Space from the content above */
+    }
+
+    .ticker-item {
+      background: #2c2c2c;
+      /* Dark background for each ticker item */
+      color: #fff;
+      /* White text for readability */
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 20px;
+      /* Rounded corners for a modern look */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow for depth */
+      transition: transform 0.3s ease;
+      /* Smooth transition for hover effect */
+    }
+
+    .ticker-item:hover {
+      transform: translateY(-5px);
+      /* Slight raise effect on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      /* Enhanced shadow on hover */
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <img src="logo.png" alt="logo" class="logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="Market_Analysis.html">Market Analysis</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+      </ul>
+      <a href="#" class="btn">EN</a>
+    </nav>
+
+    <div class="content">
+      <h1>Market</h1>
+      <p>Welcome to the market section of our Cryptocurrency Website. <br> Here, you can explore the latest trends,
+        prices, <br> and news related to cryptocurrencies.</p>
+      <a href="https://coinmarketcap.com/nft/collections/" class="btn">EXPLORE MORE</a>
+
+
+    </div>
+
+    <div id="crypto-ticker">
+
+    </div>
+
+  </div>
+</body>
+
+</html>
